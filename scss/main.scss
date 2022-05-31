@@ -1,0 +1,109 @@
+@use "mixin.scss" as mi;
+@use "font-size.scss" as fs;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.flex {
+    display: flex;
+    &-col {
+        flex-direction: column;
+    }
+    &-btw {
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-end {
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+
+html {
+    font-family: "IBM Plex Sans", sans-serif;
+}
+body {
+    padding: 1em 2em 0;
+    height: 100%;
+    width: 100%;
+    @include mi.background-image("../assets/bg-main-mobile.png")
+}
+.header {
+    height: 10em;
+    // padding: 2em;
+    &-icon {}
+    &-pattern {
+        position: absolute;
+        top: -3em;
+        right: 0;
+        display: none;
+    }
+}
+.main {
+    width: 100%;
+    gap: 30em;
+    &-intro {
+
+        gap: 1em;
+        &-title {
+            // font-size: 5.5rem;
+            font-size: fs.$step-0;
+            letter-spacing: 1px;
+            word-wrap:break-word;
+        }
+        &-desc {
+            // font-size: 1rem;
+            font-size: fs.$step--4;
+        }
+    }
+    &-illus {
+        width: 100%;
+        height: 40em;
+        background-color: black;
+        &-phone {
+
+        }
+    }
+}
+
+// tablet
+@include mi.min-width(768px) {
+    body {
+        padding: 1em 4em 0;
+        @include mi.background-image("../assets/bg-main-tablet.png");
+        .header {
+            // padding: 1em 0 0 3em;
+            &-pattern {
+                display: flex;
+                &-img {
+                    width: 80%;
+                }
+            }
+        }
+        .main {
+            &-intro {
+                padding-right: 10em;
+            }
+        }
+    }
+}
+//desktop
+@include mi.min-width(1024px) {
+    body {
+        padding: 1em 12em 0;
+        @include mi.background-image("../assets/bg-main-desktop.png");
+        .header {
+            &-pattern {
+                &-img {
+                    width: 100%;
+                }
+            }
+        }
+        .main {
+            &-intro {
+                padding-right: 14em;
+            }
+        }
+    }
+}

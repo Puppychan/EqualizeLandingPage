@@ -5,13 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equalizer Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <header class="flex flex-btw">
-        <img src="./assets/logo.svg" alt="equalizer logo" class="header-logo">
-        <img src="./assets/bg-pattern-1.svg" alt="pattern on header" class="header-pattern">
-       
+    <header class="header flex flex-btw">
+        <div class="header-icon">
+            <img src="./assets/logo.svg" alt="equalizer logo" class="header-icon-img">
+        </div>
+        <div class="header-pattern flex flex-end">
+            <img src="./assets/bg-pattern-1.svg" alt="pattern on header" class="header-pattern-img">
+        </div>
     </header>
+    <main class="main flex flex-col">
+        <section class="main-intro flex flex-col">
+            <h1 class="main-intro-title">We make your music sound extraordinary.</h1>
+            <p class="main-intro-desc">
+                A system audio equalizer specifically designed for Android and iOS. Freely tune the
+                way your music sounds with a professional grade parametric EQ & volume mixer. Control
+                bass, mids, treble, gain control, reverb, and more!
+            </p>
+        </section>
+        <section class="main-illus">
+            <img src="./assets/illustration-app.png" alt="Illustration App" class="main-illus-phone">
+            <div class="main-illus-card">
+
+            </div>
+        </section>
+    </main>
 </body>
 </html>
