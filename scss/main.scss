@@ -1,5 +1,6 @@
-@use "mixin.scss" as mi;
 @use "font-size.scss" as fs;
+@use "mixin.scss" as mi;
+$mobile-padding: 1em 1.5em 0;
 * {
     padding: 0;
     margin: 0;
@@ -18,19 +19,28 @@
         justify-content: flex-end;
         align-items: center;
     }
+    &-start {
+        justify-content: flex-start;
+        align-items: center;
+    }
+    &-center {
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 html {
     font-family: "IBM Plex Sans", sans-serif;
 }
 body {
-    padding: 1em 2em 0;
+
     height: 100%;
     width: 100%;
     @include mi.background-image("../assets/bg-main-mobile.png")
 }
 .header {
     height: 10em;
+    padding: $mobile-padding;
     // padding: 2em;
     &-icon {}
     &-pattern {
@@ -41,10 +51,12 @@ body {
     }
 }
 .main {
+    // $main-gap: 11em;
     width: 100%;
-    gap: 30em;
+    gap: 9em;
+    margin-bottom: 20em;
     &-intro {
-
+        padding: $mobile-padding;
         gap: 1em;
         &-title {
             // font-size: 5.5rem;
@@ -58,17 +70,91 @@ body {
         }
     }
     &-illus {
+        background: url("../assets/bg-pattern-2.svg") center / contain no-repeat, black; 
         width: 100%;
-        height: 40em;
-        background-color: black;
+        height: 30em;
+        @include mi.flex-center-col;
+        position: relative;
         &-phone {
-
+            width: 50%;
+            // position: absolute;
+            position: absolute;
+            top: -7.5em;
+        }
+        &-card {
+            padding: 2.3em;
+            width: 100%;
+            gap: 0.7em;
+            background-color: #fa7453;
+            border-radius: 10px;
+            color: white;
+            position: absolute;
+            top: 23em;
+            &-title {
+                font-size: fs.$step--2;
+            }
+            &-desc {
+                font-size: fs.$step--3;
+            }
+            &-price {
+                gap: 0.5em;
+                &-num {
+                    font-size: 3rem;
+                }
+                &-month {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+            &-button {
+                gap: 1.5em;
+                &-apple {
+                    @include mi.style-button(black, white, 100%, "../assets/icon-apple.svg");
+                }
+                &-android {
+                    @include mi.style-button(white, black, 100%, "../assets/icon-android.svg");
+                }
+            }
         }
     }
 }
+.footer {
+    margin-bottom: 4em;
+    padding: $mobile-padding;
+    gap: 1.5em;
+    flex-direction: column;
+    &-contact {
+        width: 15%;
+        gap: 0.8em;
+    }
 
+}
+@include mi.min-width(490px) {
+    .main {
+        gap: 11em;
+        margin-bottom: 28em;
+        &-illus {
+            &-phone {
+                top: -9em;
+                width: 38%;
+            }
+            &-card {
+                top: 29em;
+                &-button {
+                    gap: 1.2em;
+                    &-apple {
+                        @include mi.style-button(black, white, 100%, "../assets/icon-apple.svg", 5.2em);
+                    }
+                    &-android {
+                        @include mi.style-button(white, black, 100%, "../assets/icon-android.svg", 5.2em);
+                    }
+                }
+            }
+        }
+    }
+}
 // tablet
-@include mi.min-width(768px) {
+@include mi.min-width(760px) {
     body {
         padding: 1em 4em 0;
         @include mi.background-image("../assets/bg-main-tablet.png");
@@ -82,14 +168,38 @@ body {
             }
         }
         .main {
+            margin-bottom: 13em;
+            gap: 15em;
             &-intro {
                 padding-right: 10em;
+            }
+            &-illus {
+                height: 35em;
+                &-phone {
+                    top: -10.3em;
+                    left: 4.7em;
+                    width: 37%;
+                }
+                &-card {
+                    width: 60%;
+                    gap: 1em;
+                    top: 12em;
+                    right: 5em;
+                    &-button {
+                        &-apple {
+                            @include mi.style-button(black, white, 100%, "../assets/icon-apple.svg", 2em);
+                        }
+                        &-android {
+                            @include mi.style-button(white, black, 100%, "../assets/icon-android.svg", 2em);
+                        }
+                    }
+                }
             }
         }
     }
 }
 //desktop
-@include mi.min-width(1024px) {
+@include mi.min-width(1040px) {
     body {
         padding: 1em 12em 0;
         @include mi.background-image("../assets/bg-main-desktop.png");
@@ -101,8 +211,38 @@ body {
             }
         }
         .main {
+            margin-bottom: 11em;
             &-intro {
                 padding-right: 14em;
+            }
+            &-illus {
+                height: 27em;
+                &-phone {
+                    top: -10.3em;
+                    left: 3.5em;
+                    width: 28%;
+                    max-width: 270px;
+                }
+                &-card {
+                    width: 50%;
+                    max-width: 510px;
+                    gap: 0.3em;
+                    top: 5em;
+                    right: 2.3em;
+                    padding: 2em;
+                    &-desc {
+                        font-size: 1.2rem;
+                    }
+                    &-button {
+                        gap: 0.9em;
+                        &-apple {
+                            @include mi.style-button(black, white, 100%, "../assets/icon-apple.svg", 2em);
+                        }
+                        &-android {
+                            @include mi.style-button(white, black, 100%, "../assets/icon-android.svg", 2em);
+                        }
+                    }
+                }
             }
         }
     }

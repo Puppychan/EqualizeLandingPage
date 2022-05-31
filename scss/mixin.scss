@@ -1,3 +1,4 @@
+@use "font-size.scss" as fs;
 @mixin min-width($width) {
     @media screen and (min-width: $width) {
         @content;
@@ -6,4 +7,44 @@
 
 @mixin background-image($image) {
     background: url($image) right top / contain no-repeat;
+}
+
+@mixin flex-center-col {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+}
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin absolute-full-size() {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+@mixin style-button($background-color, $font-color, $width, $icon-url, $height: 3.2em) {
+    width: $width;
+    background-color: $background-color;
+    color: $font-color;
+    border: none;
+    border-radius: 20px;
+    min-height: $height;
+    padding: 1em;
+    // position: relative;
+    font-size: fs.$step--5;
+    gap: 0.5em;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+    &-text {
+        @include flex-center;
+    }
+    &:hover {
+        transform: scale(1.03) translate(0.5%, -0.5%);
+        cursor: pointer;
+    }
+
 }
