@@ -36,7 +36,15 @@ body {
 
     height: 100%;
     width: 100%;
-    @include mi.background-image("../assets/bg-main-mobile.png");
+    overflow: hidden;
+}
+.background {
+    position: absolute;
+    top: -23em;
+    bottom: 0;
+    left: 0;
+    right: -34em;
+    background: url("../assets/bg-main-mobile.png") right top/100% 100% no-repeat; 
 }
 .header {
     height: 10em;
@@ -159,8 +167,14 @@ body {
 // tablet
 @include mi.min-width(760px) {
     body {
-        // padding: 1em 4em 0;
-        @include mi.background-image("../assets/bg-main-tablet.png");
+        padding: 1em 4em 0;
+        // @include mi.background-image("../assets/bg-main-tablet.png");
+        .background {
+            right: 0;
+            top: -12em;
+            left: -25em;
+            background: url(../assets/bg-main-tablet.png) left top/110% 90% no-repeat;
+        }
         .header {
             // padding: 1em 0 0 3em;
             &-pattern {
@@ -223,10 +237,16 @@ body {
 //desktop
 @include mi.min-width(1040px) {
     body {
-        // padding: 1em 12em 0;
-        @include mi.background-image("../assets/bg-main-desktop.png");
-        background-size: 120% 90%;
-        // background-position: left top; 
+        padding: 1em 12em 0;
+        .background {
+            position: absolute;
+            top: -14em;
+            bottom: 0;
+            left: -16em;
+            right: 0;
+            background: url(../assets/bg-main-desktop.png) left top/111% 150% no-repeat;
+           
+        }
         .header {
             &-pattern {
                 &-img {
