@@ -36,7 +36,7 @@ body {
 
     height: 100%;
     width: 100%;
-    @include mi.background-image("../assets/bg-main-mobile.png")
+    @include mi.background-image("../assets/bg-main-mobile.png");
 }
 .header {
     height: 10em;
@@ -159,7 +159,7 @@ body {
 // tablet
 @include mi.min-width(760px) {
     body {
-        padding: 1em 4em 0;
+        // padding: 1em 4em 0;
         @include mi.background-image("../assets/bg-main-tablet.png");
         .header {
             // padding: 1em 0 0 3em;
@@ -223,8 +223,10 @@ body {
 //desktop
 @include mi.min-width(1040px) {
     body {
-        padding: 1em 12em 0;
+        // padding: 1em 12em 0;
         @include mi.background-image("../assets/bg-main-desktop.png");
+        background-size: 120% 90%;
+        // background-position: left top; 
         .header {
             &-pattern {
                 &-img {

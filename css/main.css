@@ -34,7 +34,7 @@ html {
 body {
   height: 100%;
   width: 100%;
-  background: url("../assets/bg-main-mobile.png") right top/contain no-repeat;
+  background: url("../assets/bg-main-mobile.png") right top/cover no-repeat;
 }
 
 .header {
@@ -225,8 +225,7 @@ body {
 }
 @media screen and (min-width: 760px) {
   body {
-    padding: 1em 4em 0;
-    background: url("../assets/bg-main-tablet.png") right top/contain no-repeat;
+    background: url("../assets/bg-main-tablet.png") right top/cover no-repeat;
   }
   body .header-pattern {
     display: flex;
@@ -318,8 +317,8 @@ body {
 }
 @media screen and (min-width: 1040px) {
   body {
-    padding: 1em 12em 0;
-    background: url("../assets/bg-main-desktop.png") right top/contain no-repeat;
+    background: url("../assets/bg-main-desktop.png") right top/cover no-repeat;
+    background-size: 120% 90%;
   }
   body .header-pattern-img {
     width: 100%;

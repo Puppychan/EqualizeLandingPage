@@ -6,7 +6,7 @@
 }
 
 @mixin background-image($image) {
-    background: url($image) right top / contain no-repeat;
+    background: url($image) right top / cover no-repeat;
 }
 
 @mixin flex-center-col {
