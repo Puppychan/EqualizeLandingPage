@@ -38,11 +38,9 @@ Users should be able to:
 - SASS - SCSS
 
 ### What I learned
-
-I learn how to use Grid
-How to fix overflow on body tag
+How to fix overflow background div on body tag
 - Create a wrapper for that div
-- Set position relative and overflow hidden
+- Set position absolute (for relative to the child div and not affect other elements) and overflow hidden
 - On div that makes body overflow, set position absolute
 And add package.json
 npm init -y
